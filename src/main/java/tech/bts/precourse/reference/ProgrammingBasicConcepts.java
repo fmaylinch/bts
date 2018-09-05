@@ -28,6 +28,7 @@ public class ProgrammingBasicConcepts {
 		loopsExample();
 		arraysExample();
 		listsExample();
+		stringsExample();
 		mapsExample();
 		
 		// TODO: methods, classes
@@ -254,18 +255,23 @@ public class ProgrammingBasicConcepts {
 		names.add("Mary");
 		names.add("John");
 		names.add("Alex");
-		
+
 		// Accessing list size
 		System.out.println("There are " + numbers.size() + " numbers");
-		
-		// Using a loop to read or write to a list
+
+		System.out.println("All numbers (using a `while` loop):");
 		int index = 0;
 		while (index < numbers.size()) {
-			System.out.println("Number at index " + index + ": " + numbers.get(index));
+			System.out.println("- Number at index " + index + ": " + numbers.get(index));
 			index++; // same as: index = index + 1;
 		}
-		
-		// Especial for-loop when we just want to use all the values in the array
+
+		System.out.println("All numbers (using a `for` loop):");
+		for (int i = 0; i < numbers.size(); i++) {
+			System.out.println("- Number at index " + i + ": " + numbers.get(i));
+		}
+
+		// Especial for-loop when we just want to use all the values in the list
 		System.out.print("All names: ");
 		for (String name : names) {
 			System.out.print(name + "  ");
@@ -275,6 +281,50 @@ public class ProgrammingBasicConcepts {
 		// We can also print a whole list (it has a fixed format)
 		System.out.println("All numbers: " + numbers);
 		
+		System.out.println();
+	}
+
+	private static void stringsExample() {
+
+		System.out.println("--- Strings ---");
+
+		// --- Strings ---
+		// It's like a list/array of characters
+
+		// We will do different operations with this string
+		String message = "We use this example string";
+
+		System.out.println("The message is: " + message);
+
+		int length = message.length(); // This is similar to list.size()
+		System.out.println("Length of the message is: " + length);
+
+		char firstChar = message.charAt(0); // This is similar to list.get(0)
+		System.out.println("The first character is: " + firstChar);
+
+		System.out.println("The character at index 8: " + message.charAt(8));
+		System.out.println("The last character is: " + message.charAt( message.length() - 1 ));
+
+		String someText = "example";
+		boolean containsSomeText = message.contains(someText);
+		System.out.println("The message contains '" + someText + "'? " + containsSomeText);
+
+		int indexOfSomeText = message.indexOf(someText);
+		System.out.println("The message contains '" + someText + "' at index " + indexOfSomeText);
+
+		System.out.println("If the text is not found the index returned is: " + message.indexOf("crocodile"));
+
+		String partOfMessage = message.substring(3, 11);
+		System.out.println("Part of the message: " + partOfMessage);
+
+		// Loop through all chars in the string
+		// We print them with a space after each one
+		for (int i = 0; i < message.length(); i++) {
+			// We use print() instead of println() to print all characters in the same line
+			System.out.print( message.charAt(i) + " " );
+		}
+
+		System.out.println();
 		System.out.println();
 	}
 
