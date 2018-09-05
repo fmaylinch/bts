@@ -29,7 +29,7 @@ public class FunctionExercises {
     }
 
 
-    /** Finds the maximum of two numbers */
+    /** Finds the minimum of two numbers */
     private static int min(int a, int b) {
 
         int result = 0;
@@ -55,7 +55,7 @@ public class FunctionExercises {
     /** Returns the number of times a letter appears in a text */
     private static int countLetter(String text, char letter) {
 
-        // You can use text.charAt(0) to get the first letter of the text
+        // You can use text.charAt(INDEX) to get the letter at that INDEX
 
         int result = 0;
         return result;
@@ -65,6 +65,13 @@ public class FunctionExercises {
     private static String repeat(String text, int times) {
 
         // You can do `result += text` to append `text` to `result`
+
+        String result = "";
+        return result;
+    }
+
+    /** Returns a string that is similar to `text`, but replaces the first occurrence of `find` with `replace` */
+    private static String replace(String text, String find, String replace) {
 
         String result = "";
         return result;
@@ -127,6 +134,14 @@ public class FunctionExercises {
         assertEquals( repeat("-", 10), "----------" );
         assertEquals( repeat("nothing", 0), "" );
         assertEquals( repeat("", 5), "" );
+
+        assertEquals( replace("the cat is here", "cat", "dog"), "the dog is here" );
+        assertEquals( replace("a cat is a cat", "cat", "dog"), "a dog is a cat" );
+        assertEquals( replace("the cat is here", "dog", "horse"), "the cat is here" );
+        assertEquals( replace("demonstration", "demon", "admini"), "administration" );
+        assertEquals( replace("demonstration", "tration", " here"), "demons here" );
+        assertEquals( replace("some text", "not found", "something"), "some text" );
+        assertEquals( replace("cellar", "ell", ""), "car" );
 
         assertEquals( countText(Arrays.asList("cat", "dog", "cat"), "cat"), 2 );
         assertEquals( countText(Arrays.asList("a", "a", "b", "a"), "a"), 3 );
