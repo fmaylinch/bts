@@ -305,6 +305,8 @@ public class ProgrammingBasicConcepts {
 		System.out.println("The character at index 8: " + message.charAt(8));
 		System.out.println("The last character is: " + message.charAt( message.length() - 1 ));
 
+		// Looking for one string in another string:
+
 		String someText = "example";
 		boolean containsSomeText = message.contains(someText);
 		System.out.println("The message contains '" + someText + "'? " + containsSomeText);
@@ -314,8 +316,16 @@ public class ProgrammingBasicConcepts {
 
 		System.out.println("If the text is not found the index returned is: " + message.indexOf("crocodile"));
 
+		// Obtaining a part of a string
 		String partOfMessage = message.substring(3, 11);
 		System.out.println("Part of the message: " + partOfMessage);
+
+		// Comparing strings
+		String s1 = partOfMessage;
+		String s2 = "use this";
+		System.out.println("We want to compare '" + s1 + "' and '" + s2 + "', which contain the same letters.");
+		System.out.println("Don't use == to compare strings in Java, because that usually returns... " + (s1 == s2));
+		System.out.println("You should use s1.equals(s2), which in this case is... " + (s1.equals(s2)));
 
 		// Loop through all chars in the string
 		// We print them with a space after each one
