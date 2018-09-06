@@ -1,7 +1,6 @@
 package tech.bts.precourse.exercises;
 
 import java.util.*;
-import static tech.bts.precourse.ExercisesUtil.assertEquals;
 
 /**
  * Function exercises.
@@ -163,4 +162,18 @@ public class FunctionExercises {
 
         System.out.println("All tests OK!");
     }
+
+	/**
+	 * Checks that the two values are equal and throws an error if not
+	 */
+	private static void assertEquals(Object actual, Object expected) {
+
+		if (!actual.equals(expected)) {
+			throw new RuntimeException(
+					"Values are not equal!" + "\n"
+							+ "Actual: " + actual + "\n"
+							+ "Expected: " + expected + "\n"
+			);
+		}
+	}
 }

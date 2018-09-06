@@ -1,7 +1,6 @@
 package tech.bts.precourse.exercises;
 
 import java.util.*;
-import static tech.bts.precourse.ExercisesUtil.assertEquals;
 
 /**
  * Loop exercises (while, for)
@@ -91,5 +90,21 @@ public class LoopExercises {
 		assertEquals( numbersFromStartToEnd(-3, 2), Arrays.asList(-3, -2, -1, 0, 1, 2) );
 
 		// TODO: add tests for your functions here
+	}
+
+	// ---------------
+
+	/**
+	 * Checks that the two values are equal and throws an error if not
+	 */
+	private static void assertEquals(Object actual, Object expected) {
+
+		if (!actual.equals(expected)) {
+			throw new RuntimeException(
+					"Values are not equal!" + "\n"
+							+ "Actual: " + actual + "\n"
+							+ "Expected: " + expected + "\n"
+			);
+		}
 	}
 }
