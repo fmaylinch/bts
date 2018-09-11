@@ -20,6 +20,19 @@ public class FunctionExercises {
         return result;
     }
 
+    /** Finds the average of two numbers */
+    private static double average(double a, double b) {
+
+        double result = 0.0;
+        return result;
+    }
+
+    /** Returns the number if it's positive, or returns 0 if it's negative */
+	private static int atLeastZero(int number) {
+
+	    int result = 0;
+	    return result;
+    }
 
     /** Finds the maximum of two numbers */
     private static int max(int a, int b) {
@@ -36,19 +49,21 @@ public class FunctionExercises {
         return result;
     }
 
-    /** Finds the average of two numbers */
-    private static double average(double a, double b) {
-
-        double result = 0.0;
-        return result;
-    }
-
     /** Returns the longest text */
     private static String longest(String text1, String text2) {
 
         // You can use text1.length() to get the length of text1
 
         String result = "";
+        return result;
+    }
+
+    /** Returns the longest length */
+    private static int longestLength(String text1, String text2) {
+
+        // Try to use the max() function here!
+
+        int result = 0;
         return result;
     }
 
@@ -94,6 +109,13 @@ public class FunctionExercises {
         return result;
     }
 
+    /** Returns a list of texts but in the reverse order */
+    private static List<String> reverse(List<String> texts) {
+
+        List<String> result = new ArrayList<>();
+        return result;
+    }
+
 
     // -----------------------------------
 
@@ -105,6 +127,15 @@ public class FunctionExercises {
         assertEquals( sum(1,1), 2 );
         assertEquals( sum(7,-3), 4 );
 
+        assertEquals( average(2, 4), 3.0 );
+        assertEquals( average(2, 3), 2.5 );
+        assertEquals( average(2, 2), 2.0 );
+        assertEquals( average(-2, 2), 0.0 );
+
+        assertEquals( atLeastZero(5), 5 );
+        assertEquals( atLeastZero(-3), 0 );
+        assertEquals( atLeastZero(-0), 0 );
+
         assertEquals( max(4,2), 4 );
         assertEquals( max(3,7), 7 );
         assertEquals( max(-6,3), 3 );
@@ -113,15 +144,17 @@ public class FunctionExercises {
         assertEquals( min(3,7), 3 );
         assertEquals( min(-6,3), -6 );
 
-        assertEquals( average(2, 4), 3.0 );
-        assertEquals( average(2, 3), 2.5 );
-        assertEquals( average(2, 2), 2.0 );
-        assertEquals( average(-2, 2), 0.0 );
-
         assertEquals( longest("dog", "horse"), "horse" );
         assertEquals( longest("big dog", "horse"), "big dog" );
         assertEquals( longest("", "hi"), "hi" );
         assertEquals( longest("something", ""), "something" );
+        assertEquals( longest("", ""), "" );
+
+        assertEquals( longestLength("dog", "horse"), 5 );
+        assertEquals( longestLength("big dog", "horse"), 7 );
+        assertEquals( longestLength("", "hi"), 2 );
+        assertEquals( longestLength("something", ""), 9 );
+        assertEquals( longestLength("", ""), 0 );
 
         assertEquals( countLetter("pie", 'i'), 1 );
         assertEquals( countLetter("coconut", 'o'), 2 );
@@ -146,7 +179,7 @@ public class FunctionExercises {
         assertEquals( countText(Arrays.asList("cat", "dog", "cat"), "cat"), 2 );
         assertEquals( countText(Arrays.asList("a", "a", "b", "a"), "a"), 3 );
         assertEquals( countText(Arrays.asList("white", "blue"), "red"), 0 );
-        assertEquals( countText(Arrays.asList(), "nope"), 0 );
+        assertEquals( countText(Collections.emptyList(), "nope"), 0 );
         assertEquals( countText(Arrays.asList("hey", "", ""), ""), 2 );
 
         assertEquals( shortTexts(Arrays.asList("aa", "bbbb", "c"), 2),
@@ -157,8 +190,13 @@ public class FunctionExercises {
                 Arrays.asList("aa", "bbbb", "c") );
         assertEquals( shortTexts(Arrays.asList("  ", "a", "bb", "", "c"), 1),
                 Arrays.asList("a", "", "c") );
-        assertEquals( shortTexts(Arrays.asList(), 5),
-                Arrays.asList() );
+        assertEquals( shortTexts(Collections.emptyList(), 5),
+                Collections.emptyList() );
+
+        assertEquals( reverse(Arrays.asList("a", "b", "c", "d")),
+                Arrays.asList("d", "c", "b", "a") );
+        assertEquals( reverse(Collections.emptyList()),
+                Collections.emptyList() );
 
         System.out.println("All tests OK!");
     }
